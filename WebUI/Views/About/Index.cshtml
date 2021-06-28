@@ -1,0 +1,34 @@
+﻿@model WebUI.Models.AboutImageViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<article class="about-section py-5">
+
+    <div class="container">
+        <h2 class="title mb-3">Hakkımda</h2>
+
+        <p>@Model.Abouts.AboutMe </p>
+        @foreach (var item in Model.AboutImages.Where(x => x.Id == 1))
+        {
+            <figure><img class="img-fluid" src="@item.ImagePath" alt="image"></figure>
+        }
+
+        <h5 class="mt-5">Blog Hakkında</h5>
+        <p>@Model.Abouts.AboutTheBlog</p>
+        <h5 class="mt-5">Yeteneklerim</h5>
+        <p>@Model.Abouts.MySkillsAndExperience</p>
+        <h5 class="mt-5">Başka Neler Yapıyorum?</h5>
+        <p>@Model.Abouts.SideTodos</p>
+        @foreach (var item in Model.AboutImages.Where(x => x.Id == 2))
+        {
+            <figure><a href="https://made4dev.com"><img class="img-fluid" src="@item.ImagePath" alt="image"></a></figure>
+
+        }
+    </div>
+
+  
+
+
+</article><!--//about-section-->

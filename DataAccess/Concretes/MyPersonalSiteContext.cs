@@ -16,5 +16,6 @@ namespace DataAccess.Concretes
         }
 
         public DbSet<About> Abouts { get; set; }
+        public DbSet<AboutImage> AboutImages { get; set; }
     }
 }
