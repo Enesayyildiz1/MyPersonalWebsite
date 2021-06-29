@@ -1,8 +1,38 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using Entity.Concrete
+@model List<Blog> 
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+ 
+<section class="blog-list px-3 py-5 p-md-5">
+    <div class="container">
+        @foreach (var item in Model)
+        {
+            <div class="item mb-5">
+                <div class="media">
+                    <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="~/images/blog/blog-post-thumb-1.jpg" alt="image">
+                    <div class="media-body">
+                        <h3 class="title mb-1"><a href="/Blog/Index/">@item.BlogHead</a></h3>
+                        <div class="meta mb-1"><span class="date">@Math.Ceiling(@DateTime.Now.Subtract(@item.PublishedDate).TotalDays) gün önce</span><span class="time">@item.ReadTime</span><span class="comment"><a href="#">8 yorum</a></span></div>
+                        <div class="intro">@item.BlogBody...</div>
+                        <a class="more-link" href="blog-post.html">Read more &rarr;</a>
+                    </div><!--//media-body-->
+                </div><!--//media-->
+            </div><!--//item-->
+        }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+
+
+
+
+
+        <nav class="blog-nav nav nav-justified my-5">
+            <a class="nav-link-prev nav-item nav-link d-none rounded-left" href="#">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+            <a class="nav-link-next nav-item nav-link rounded" href="blog-list.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+        </nav>
+
+    </div>
+</section>
+
