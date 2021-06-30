@@ -1,0 +1,34 @@
+﻿@model Entity.Concrete.Message 
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="blog-list px-3 py-5 p-md-5">
+    <div class="container">
+        <h2 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Bana Mesaj Gönder</h2>
+        <form asp-controller="Message" asp-action="Add" method="post">
+            <div class="form-group"> 
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="FirstName" for="exampleFormControlInput1">Ad</label>
+                        <input asp-for="FirstName" type="text" class="form-control" placeholder="Ad">
+                    </div>
+                    <div class="col">
+                        <label asp-for="LastName" for="exampleFormControlInput1">Soyad</label>
+                        <input asp-for="LastName" type="text" class="form-control" placeholder="Soyad">
+                    </div>
+                </div>
+            </div>
+                <div class="form-group">
+                    <label asp-for="Mail" for="exampleFormControlInput1">Mail Adresi</label>
+                    <input asp-for="Mail" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@xyz.com">
+                </div>
+        
+                <div class="form-group">
+                    <label asp-for="MessageContent" for="exampleFormControlTextarea1">Mesajınız</label>
+                    <textarea asp-for="MessageContent" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Gönder</button>
+        </form>
+        </div>
+    </section>
