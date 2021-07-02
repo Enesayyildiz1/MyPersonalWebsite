@@ -9,5 +9,6 @@ namespace Business.Abstracts
    public  interface IBlogService
     {
         IDataResult<List<Blog>> GetAll();
+        IDataResult<Blog> GetById(int id);
     }
 }

@@ -14,7 +14,7 @@ namespace DataAccess.Concretes
                 "Trusted_Connection=true");
             base.OnConfiguring(optionsBuilder);
         }
-
+        public DbSet<BlogImage> BlogImages { get; set; }
         public DbSet<About> Abouts { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Blog> Blogs { get; set; }

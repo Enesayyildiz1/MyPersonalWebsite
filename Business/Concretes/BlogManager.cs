@@ -21,5 +21,10 @@ namespace Business.Concretes
         {
           return new SuccessDataResult<List<Blog>>(  _blogDal.GetAll());
         }
+
+        public IDataResult<Blog> GetById(int id)
+        {
+            return new SuccessDataResult<Blog>(_blogDal.Get(x => x.Id == id));
+        }
     }
 }
