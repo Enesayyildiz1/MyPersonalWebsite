@@ -1,4 +1,4 @@
-﻿@model WebUI.Models.AboutImageViewModel
+﻿@model Entity.Concrete.About
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -9,23 +9,21 @@
     <div class="container">
         <h2 class="title mb-3">Hakkımda</h2>
 
-       <div id="content">@Html.Raw(@Model.Abouts.AboutMe)</div>
-        @foreach (var item in Model.AboutImages.Where(x => x.Id == 1))
-        {
-            <figure><img class="img-fluid" src="@item.ImagePath" alt="image"></figure>
-        }
+       <div id="content">@Html.Raw(@Model.AboutMe)</div>
+       
+            <figure><img class="img-fluid" src="@Model.FirstImagePath" alt="image"></figure>
+        
 
         <h5 class="mt-5">Blog Hakkında</h5>
-        <p>@Model.Abouts.AboutTheBlog</p>
+        <p>@Model.AboutTheBlog</p>
         <h5 class="mt-5">Yeteneklerim</h5>
-        <p>@Model.Abouts.MySkillsAndExperience</p>
+        <p>@Model.MySkillsAndExperience</p>
         <h5 class="mt-5" >Başka Neler Yapıyorum?</h5>
-        <p>@Model.Abouts.SideTodos</p>
-        @foreach (var item in Model.AboutImages.Where(x => x.Id == 2))
-        {
-            <figure><a href="https://made4dev.com"><img class="img-fluid" src="@item.ImagePath" alt="image"></a></figure>
+        <p>@Model.SideTodos</p>
+       
+            <figure><a href="https://made4dev.com"><img class="img-fluid" src="@Model.SecondImagePath" alt="image"></a></figure>
 
-        }
+        
     </div>
 
   

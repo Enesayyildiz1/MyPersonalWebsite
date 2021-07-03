@@ -15,6 +15,8 @@ namespace Entity.Concrete
         public string AboutTheBlog { get; set; }
         public string MySkillsAndExperience { get; set; }
         public string SideTodos { get; set; }
+        public string FirstImagePath { get; set; }
+        public string SecondImagePath { get; set; }
 
 
     }

@@ -1,0 +1,41 @@
+﻿@model Entity.Concrete.About
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+    <h4 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Hakkımda Kısmı Güncelleme Sayfası</h4>
+
+
+    <form asp-controller="AdminAbout" asp-action="Update" asp-route-id="1">
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Kısa Hakkımda</label>
+            <textarea asp-for="@Model.ShortAbout" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Hakkımda</label>
+            <textarea asp-for="@Model.AboutMe" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Blog Hakkında</label>
+            <textarea asp-for="@Model.AboutTheBlog" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Yeteneklerim ve Deneyimlerim</label>
+            <textarea asp-for="@Model.MySkillsAndExperience" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Başka Neler Yapıyorum?</label>
+            <textarea asp-for="@Model.SideTodos" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">İlk Image Path</label>
+            <textarea asp-for="@Model.FirstImagePath" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">İkinci Image Path</label>
+            <textarea asp-for="@Model.SecondImagePath" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">
+            Bilgileri Güncelle
+        </button>
+    </form>

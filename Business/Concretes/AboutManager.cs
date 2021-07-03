@@ -17,10 +17,16 @@ namespace Business.Concretes
             _aboutDal = aboutDal;
         }
 
-        public DataResult<List<About>> GetAll()
+        public IDataResult<List<About>> GetAll()
         {
             
           return new SuccessDataResult<List<About>>(  _aboutDal.GetAll(),"Geldi");
+        }
+
+        public IResult Update(About about)
+        {
+            _aboutDal.Update(about);
+            return new SuccessResult();
         }
     }
 }

@@ -8,6 +8,7 @@ namespace Business.Abstracts
 {
     public interface IAboutService
     {
-        DataResult<List<About>> GetAll();
+        IDataResult<List<About>> GetAll();
+        IResult Update(About about);
     }
 }
