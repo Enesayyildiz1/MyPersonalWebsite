@@ -1,0 +1,35 @@
+﻿@using Entity.Concrete
+@model List<Category>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Adı</th>
+      
+
+    </tr>
+
+
+    @foreach (var category in Model)
+    {
+        <tr>
+            <td>@category.Id</td>
+            <td>@category.CategoryName</td>
+            
+        </tr>
+    }
+
+</table> 
+<a class="btn btn-success" href="/AdminCategory/Add" >Kategori Ekle</a>
+
+

@@ -1,0 +1,27 @@
+﻿@using Entity.Concrete
+@model List<Label>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Adı</th>
+
+
+    </tr>
+
+
+    @foreach (var label in Model)
+    {
+        <tr>
+            <td>@label.Id</td>
+            <td>@label.LabelName</td>
+
+        </tr>
+    }
+
+</table>
+<a class="btn btn-success" href="/AdminLabel/Add">Etiket Ekle</a>
+

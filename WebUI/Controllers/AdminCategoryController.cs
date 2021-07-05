@@ -9,20 +9,24 @@ using System.Threading.Tasks;
 
 namespace WebUI.Controllers
 {
-    public class AdminAboutController : Controller
+    public class AdminCategoryController : Controller
     {
-        AboutManager _aboutManager = new AboutManager(new AboutDal());
-        
+        CategoryManager _categoryManager = new CategoryManager(new CategoryDal());
         public IActionResult Index()
         {
-            var liste=  _aboutManager.GetAll().Data.FirstOrDefault();
+           var liste= _categoryManager.GetAll().Data;
             return View(liste);
         }
-        public IActionResult Update(About about)
+        [HttpGet]
+        public IActionResult Add()
         {
-            _aboutManager.Update(about);
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Add(Category category)
+        {
+            _categoryManager.Add(category);
             return RedirectToAction("Index");
         }
-     
     }
 }
