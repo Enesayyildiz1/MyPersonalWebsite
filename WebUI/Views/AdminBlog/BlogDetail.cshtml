@@ -1,0 +1,30 @@
+﻿@model WebUI.Models.BlogImageViewModel
+@{
+    ViewData["Title"] = "BlogDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<article class="blog-post px-3 py-5 p-md-5">
+    <div class="container">
+        <header class="blog-post-header">
+            <h2 class="title mb-2">@Model.Blogs.BlogHead</h2>
+            <div class="meta mb-3"><span class="date">@Math.Ceiling(@DateTime.Now.Subtract(@Model.Blogs.PublishedDate).TotalDays) gün önce</span><span class="time">@Model.Blogs.ReadTime</span><span class="comment"><a href="#">4 comments</a></span></div>
+        </header>
+
+        <div class="blog-post-body">
+            <figure class="blog-banner">
+                <a href="https://made4dev.com"><img class="img-fluid" src="@Model.BlogImage.ImagePath" alt="image"></a>
+                <figcaption class="mt-2 text-center image-caption">Image Credit: <a href="https://made4dev.com?ref=devblog" target="_blank">made4dev.com (Premium Programming T-shirts)</a></figcaption>
+            </figure>
+            @Model.Blogs.BlogBody
+
+
+
+
+          
+       
+
+        </div><!--//container-->
+    </div>
+</article>
+

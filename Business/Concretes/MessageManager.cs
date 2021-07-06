@@ -22,6 +22,11 @@ namespace Business.Concretes
             return new SuccessDataResult<List<Message>>(_messageDal.GetAll());
         }
 
+        public IDataResult<Message> GetById(int id)
+        {
+            return new SuccessDataResult<Message>(_messageDal.Get(x=>x.Id==id));
+        }
+
         public IResult Send(Message message)
         {
             message.MessageDate = DateTime.Now;

@@ -6,27 +6,27 @@
 
 <article class="about-section py-5">
 
-    <div class="wrapper">
+    <div class="container">
         <h2 class="title mb-3">Hakkımda</h2>
 
-       <div id="content">@Html.Raw(@Model.AboutMe)</div>
-       
-            <figure><img class="img-fluid" src="@Model.FirstImagePath" alt="image"></figure>
-        
+        <div id="content">@Html.Raw(@Model.AboutMe)</div>
+
+        <figure><img class="img-fluid" src="@Model.FirstImagePath" alt="image"></figure>
+
 
         <h5 class="mt-5">Blog Hakkında</h5>
         <p>@Model.AboutTheBlog</p>
         <h5 class="mt-5">Yeteneklerim</h5>
         <p>@Model.MySkillsAndExperience</p>
-        <h5 class="mt-5" >Başka Neler Yapıyorum?</h5>
+        <h5 class="mt-5">Başka Neler Yapıyorum?</h5>
         <p>@Model.SideTodos</p>
-       
-            <figure><a href="https://made4dev.com"><img class="img-fluid" src="@Model.SecondImagePath" alt="image"></a></figure>
 
-        
+        <figure><a href="https://made4dev.com"><img class="img-fluid" src="@Model.SecondImagePath" alt="image"></a></figure>
+
+
     </div>
 
-  
+
 
 
 </article><!--//about-section-->

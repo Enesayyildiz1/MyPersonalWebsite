@@ -10,5 +10,7 @@ namespace Business.Abstracts
     {
         IDataResult<List<Blog>> GetAll();
         IDataResult<Blog> GetById(int id);
+        IDataResult<Blog> GetByHeading(string name);
+        IResult Add(Blog blog);
     }
 }

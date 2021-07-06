@@ -17,5 +17,11 @@ namespace WebUI.Controllers
             var messages = _messageManager.GetAll().Data;
             return View(messages);
         }
+        public IActionResult MessageDetail(int id)
+        {
+            var message=_messageManager.GetById(id).Data;
+            
+            return View(message);
+        }
     }
 }

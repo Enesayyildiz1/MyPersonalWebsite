@@ -10,6 +10,7 @@ namespace Business.Abstracts
     {
         IDataResult<List<Message>> GetAll();
         IResult Send(Message message);
+        IDataResult<Message> GetById(int id);
 
     }
 }

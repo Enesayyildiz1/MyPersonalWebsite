@@ -9,5 +9,6 @@ namespace Business.Abstracts
    public  interface IBlogImageService
     {
         IDataResult<BlogImage> GetByBlogId(int id);
+        IResult Add(BlogImage blogImage);
     }
 }

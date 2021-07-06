@@ -17,6 +17,12 @@ namespace Business.Concretes
             _blogImageDal = blogImageDal;
         }
 
+        public IResult Add(BlogImage blogImage)
+        {
+            _blogImageDal.Add(blogImage);
+            return new SuccessResult();
+        }
+
         public IDataResult<BlogImage> GetByBlogId(int id)
         {
             return new SuccessDataResult<BlogImage>(_blogImageDal.Get(x => x.BlogId == id));

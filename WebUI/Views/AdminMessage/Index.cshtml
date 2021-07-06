@@ -9,10 +9,7 @@
 
 
 
-<!DOCTYPE html>
-<html>
 
-<body class="hold-transition sidebar-mini">
 
     <!-- Content Wrapper. Contains page content -->
     <!-- Content Header (Page header) -->
@@ -83,15 +80,15 @@
                                     {
 
 
-                                        <tr href="/Message/GetMessageDetails/@item.Id">
+                                        <tr href="/AdminMessage/MessageDetail/@item.Id">
                                             <td>
                                                 <div class="icheck-primary">
                                                     <input type="checkbox" value="" id="check1">
                                                     <label for="check1"></label>
                                                 </div>
                                             </td>
-                                            <td class="mailbox-star"><a href="/Message/GetMessageDetails/@item.Id"><i class="fas fa-star text-warning"></i></a></td>
-                                            <td class="mailbox-name"><a href="/Message/GetMessageDetails/@item.Id">@item.Mail</a></td>
+                                            <td class="mailbox-star"><a href="/AdminMessage/MessageDetail/@item.Id"><i class="fas fa-star text-warning"></i></a></td>
+                                            <td class="mailbox-name"><a href="/AdminMessage/MessageDetail/@item.Id">@item.Mail</a></td>
                                             <td class="mailbox-subject">
                                                 <b>@item.FirstName @item.LastName </b>@item.MessageContent
                                             </td>
@@ -138,8 +135,6 @@
         <!-- /.row -->
     </section>
 
-</body>
-</html>
 
 
 

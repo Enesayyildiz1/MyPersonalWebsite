@@ -17,9 +17,20 @@ namespace Business.Concretes
             _blogDal = blogDal;
         }
 
+        public IResult Add(Blog blog)
+        {
+            _blogDal.Add(blog);
+            return new SuccessResult();
+        }
+
         public IDataResult<List<Blog>> GetAll()
         {
           return new SuccessDataResult<List<Blog>>(  _blogDal.GetAll());
+        }
+
+        public IDataResult<Blog> GetByHeading(string name)
+        {
+            return new SuccessDataResult<Blog>(_blogDal.Get(x => x.BlogHead == name));
         }
 
         public IDataResult<Blog> GetById(int id)
