@@ -34,9 +34,9 @@
     <None Include="wwwroot\images\promo-banner.jpg" />
     <None Include="wwwroot\js\blog.js" />
     <None Include="wwwroot\js\demo\style-switcher.js" />
-    <None Include="wwwroot\plugins\bootstrap\js\bootstrap.min.js" />
-    <None Include="wwwroot\plugins\jquery-3.3.1.min.js" />
-    <None Include="wwwroot\plugins\popper.min.js" />
+    <None Include="wwwroot\js\plugins\bootstrap\js\bootstrap.min.js" />
+    <None Include="wwwroot\js\plugins\jquery-3.3.1.min.js" />
+    <None Include="wwwroot\js\plugins\popper.min.js" />
     <None Include="wwwroot\scss\bootstrap\js\dist\alert.js" />
     <None Include="wwwroot\scss\bootstrap\js\dist\alert.js.map" />
     <None Include="wwwroot\scss\bootstrap\js\dist\button.js" />

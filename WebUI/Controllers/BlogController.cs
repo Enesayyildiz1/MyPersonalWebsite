@@ -12,17 +12,15 @@ namespace WebUI.Controllers
     public class BlogController : Controller
     {
         BlogManager _blogManager = new BlogManager(new BlogDal());
-        BlogImageManager _blogImageManager = new BlogImageManager(new BlogImageDal());
+       
         
         public IActionResult Index(int id)
         {
-            BlogImageViewModel blogImageViewModel = new BlogImageViewModel();
+          
             var blogs = _blogManager.GetById(id).Data;
-            var blogImages = _blogImageManager.GetByBlogId(id).Data;
-            blogImageViewModel.Blogs = blogs;
-            blogImageViewModel.BlogImage = blogImages;
+           
 
-            return View(blogImageViewModel);
+            return View(blogs);
         }
         
         public IActionResult BlogList()

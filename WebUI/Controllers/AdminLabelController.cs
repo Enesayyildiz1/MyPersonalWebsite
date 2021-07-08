@@ -2,6 +2,7 @@
 using DataAccess.Concretes;
 using Entity.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace WebUI.Controllers
     public class AdminLabelController : Controller
     {
         LabelManager _labelManager = new LabelManager(new LabelDal());
+        BlogLabelManager _blogLabelManager = new BlogLabelManager(new BlogLabelDal());
 
         public IActionResult Index()
         {
@@ -27,6 +29,29 @@ namespace WebUI.Controllers
         public IActionResult Add(Label label)
         {
             _labelManager.Add(label);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public IActionResult AddToBlog(int id)
+        {
+            BlogLabel blogLabel = new BlogLabel();
+            List<SelectListItem> labels = (from category in _labelManager.GetAll().Data
+                                               select new SelectListItem
+                                               {
+                                                   Text = category.LabelName,
+                                                   Value = category.Id.ToString()
+                                               }).ToList();
+            ViewBag.liste = labels;
+            blogLabel.Id = 0;
+            blogLabel.BlogId = id;
+            blogLabel.LabelId = 1;
+            return View(blogLabel);
+        }
+        [HttpPost]
+        public IActionResult AddToBlog(BlogLabel blogLabel)
+        {
+            blogLabel.Id = 0;
+            _blogLabelManager.Add(blogLabel);
             return RedirectToAction("Index");
         }
     }

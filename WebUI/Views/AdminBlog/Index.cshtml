@@ -11,12 +11,12 @@
         {
             <div class="item mb-5">
                 <div class="media">
-                    <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="~/images/blog/blog-post-thumb-1.jpg" alt="image">
+                    <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="@item.ImagePath" alt="image">
                     <div class="media-body">
                         <h3 class="title mb-1"><a asp-controller="AdminBlog" asp-action="BlogDetail" asp-route-id="@item.Id">@item.BlogHead</a></h3>
                         <div class="meta mb-1"><span class="date">@Math.Ceiling(@DateTime.Now.Subtract(@item.PublishedDate).TotalDays) gün önce</span><span class="time">@item.ReadTime</span><span class="comment"><a href="#">8 yorum</a></span></div>
-                        <div class="intro">@item.BlogBody...</div>
-                        <a class="more-link" href="blog-post.html">Read more &rarr;</a>
+                        <div class="intro" >@Html.Raw(@item.BlogBody.Substring(0, 40)) ...</div>
+                        <a class="more-link" href="blog-post.html">Okumaya devam et &rarr;</a>
                     </div><!--//media-body-->
                 </div><!--//media-->
             </div><!--//item-->

@@ -14,10 +14,12 @@ namespace DataAccess.Concretes
                 "Trusted_Connection=true");
             base.OnConfiguring(optionsBuilder);
         }
-        public DbSet<BlogImage> BlogImages { get; set; }
+       
         public DbSet<About> Abouts { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Blog> Blogs { get; set; }
+        public DbSet<BlogCategory> BlogCategories { get; set; }
+        public DbSet<BlogLabel> BlogLabels { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Label> Labels { get; set; }
 

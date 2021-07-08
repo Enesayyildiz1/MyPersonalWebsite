@@ -1,4 +1,4 @@
-﻿@model WebUI.Models.BlogImageViewModel
+﻿@model Entity.Concrete.Blog
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,15 +7,15 @@
 <article class="blog-post px-3 py-5 p-md-5">
     <div class="container">
         <header class="blog-post-header">
-            <h2 class="title mb-2">@Model.Blogs.BlogHead</h2>
-            <div class="meta mb-3"><span class="date">@Math.Ceiling(@DateTime.Now.Subtract(@Model.Blogs.PublishedDate).TotalDays) gün önce</span><span class="time">@Model.Blogs.ReadTime</span><span class="comment"><a href="#">4 comments</a></span></div>
+            <h2 class="title mb-2">@Model.BlogHead</h2>
+            <div class="meta mb-3"><span class="date">@Math.Ceiling(@DateTime.Now.Subtract(@Model.PublishedDate).TotalDays) gün önce</span><span class="time">@Model.ReadTime</span><span class="comment"><a href="#">4 comments</a></span></div>
         </header>
 
         <div class="blog-post-body">
             <figure class="blog-banner">
-                <a><img class="img-fluid" src="@Model.BlogImage.ImagePath" alt="image"></a>
+                <a><img class="img-fluid" src="@Model.ImagePath" alt="image"></a>
                            </figure>
-            @Html.Raw( @Model.Blogs.BlogBody)
+            @Html.Raw( @Model.BlogBody)
 
 
 

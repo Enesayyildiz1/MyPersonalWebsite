@@ -1,0 +1,35 @@
+﻿@using Entity.Concrete
+@model List<Blog>
+@{
+    ViewData["Title"] = "BlogAddCategoryOrLabel";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Blog Başlığı</th>
+            <th>Bloga Kategori Ekle</th>
+            <th>Bloga Etiket Ekle</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.BlogHead</td>
+                <td><a  href="/AdminCategory/AddToBlog/@item.Id" class="btn btn-success">Kategori Ekle</a></td>
+                <td ><a href="/AdminLabel/AddToBlog/@item.Id" class="btn btn-primary">Etiket Ekle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

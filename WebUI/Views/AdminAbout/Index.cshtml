@@ -27,14 +27,16 @@
         <label for="exampleFormControlTextarea1">Başka Neler Yapıyorum?</label>
         <textarea asp-for="@Model.SideTodos" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
+
     <div class="form-group">
-        <label for="exampleFormControlTextarea1">İlk Image Path</label>
-        <textarea asp-for="@Model.FirstImagePath" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <label for="exampleFormControlFile1">İlk Fotoğrafı Ekle</label>
+        <input  asp-for="@Model.FirstImagePath" type="file" class="form-control-file" id="exampleFormControlFile1">
     </div>
     <div class="form-group">
-        <label for="exampleFormControlTextarea1">İkinci Image Path</label>
-        <textarea asp-for="@Model.SecondImagePath" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <label for="exampleFormControlFile1">İkinci Fotoğrafı Ekle</label>
+        <input asp-for="@Model.SecondImagePath" type="file" class="form-control-file" id="exampleFormControlFile2">
     </div>
+    
     <button class="btn btn-primary" type="submit">
         Bilgileri Güncelle
     </button>

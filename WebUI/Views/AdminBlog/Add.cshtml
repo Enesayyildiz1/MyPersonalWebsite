@@ -1,4 +1,4 @@
-﻿@model WebUI.Models.BlogImageViewModel
+﻿@model Entity.Concrete.Blog
 @{
     ViewData["Title"] = "Add";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -8,19 +8,19 @@
    
     <div class="form-group">
         <label for="exampleFormControlInput1">Blog Başlığı</label>
-        <input asp-for="Blogs.BlogHead" type="text" class="form-control" id="exampleFormControlInput1">
+        <input asp-for="BlogHead" type="text" class="form-control" id="exampleFormControlInput1">
     </div>
     <div class="form-group">
         <label for="exampleFormControlInput1">Blog Resim Yolu</label>
-        <input asp-for="BlogImage.ImagePath" type="text" class="form-control" id="exampleFormControlInput1">
+        <input asp-for="ImagePath" type="text" class="form-control" id="exampleFormControlInput1">
     </div>
     <div class="form-group">
         <label for="exampleFormControlInput1">Blog</label>
-        <textarea asp-for="Blogs.BlogBody" id="summernote"></textarea>
+        <textarea asp-for="BlogBody" id="summernote"></textarea>
     </div>
     <div class="form-group">
         <label for="exampleFormControlInput1">Blog</label>
-        <textarea asp-for="Blogs.ReadTime" id="summernote"></textarea>
+        <input asp-for="ReadTime" type="text" class="form-control">
     </div>
     <button class="btn btn-success" type="submit"> Kaydet</button>
 </form>
