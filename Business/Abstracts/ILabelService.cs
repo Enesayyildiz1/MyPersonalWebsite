@@ -10,5 +10,9 @@ namespace Business.Abstracts
     {
         IDataResult<List<Label>> GetAll();
         IResult Add(Label label);
+
+      
+        IDataResult<Label> GetById(int id);
+        IResult Update(Label label);
     }
 }

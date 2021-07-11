@@ -27,5 +27,12 @@ namespace Business.Concretes
         {
             return new SuccessDataResult<List<BlogCategory>>(_blogCategoryDal.GetAll());
         }
+
+        public IResult Update(BlogCategory blogCategory)
+        {
+            _blogCategoryDal.Update(blogCategory);
+            return new SuccessResult();
+        }
     }
+    
 }

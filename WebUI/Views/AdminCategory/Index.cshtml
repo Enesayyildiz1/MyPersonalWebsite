@@ -15,7 +15,8 @@
     <tr>
         <th>Id</th>
         <th>Adı</th>
-      
+        <th>Güncelle</th>
+
 
     </tr>
 
@@ -25,11 +26,12 @@
         <tr>
             <td>@category.Id</td>
             <td>@category.CategoryName</td>
+            <td><a class="btn btn-warning" href="/AdminCategory/Update/@category.Id">Güncelle</a></td>
             
         </tr>
     }
 
 </table> 
-<a class="btn btn-success" href="/AdminCategory/Add" >Kategori Ekle</a>
+<a class="btn btn-success" href="/AdminCategory/Add" >Kategori Güncelle</a>
 
 

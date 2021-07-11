@@ -31,6 +31,18 @@ namespace WebUI.Controllers
             return RedirectToAction("Index");
         }
         [HttpGet]
+        public IActionResult Update(int id)
+        {
+            var category=_categoryManager.GetById(id).Data;
+            return View(category);
+        }
+        [HttpPost]
+        public IActionResult Update(Category category)
+        {
+            _categoryManager.Update(category);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
         public IActionResult AddToBlog(int id)
         {
             BlogCategory blogCategory = new BlogCategory();

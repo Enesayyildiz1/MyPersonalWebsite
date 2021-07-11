@@ -32,6 +32,17 @@ namespace WebUI.Controllers
             return RedirectToAction("Index");
         }
         [HttpGet]
+        public IActionResult Update()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Update(Label label)
+        {
+            _labelManager.Update(label);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
         public IActionResult AddToBlog(int id)
         {
             BlogLabel blogLabel = new BlogLabel();

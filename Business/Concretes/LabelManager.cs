@@ -27,5 +27,16 @@ namespace Business.Concretes
         {
             return new SuccessDataResult<List<Label>>(_labelDal.GetAll());
         }
+
+        public IDataResult<Label> GetById(int id)
+        {
+            return new SuccessDataResult<Label>(_labelDal.Get(x=>x.Id==id));
+        }
+
+        public IResult Update(Label label)
+        {
+            _labelDal.Update(label);
+            return new SuccessResult();
+        }
     }
 }

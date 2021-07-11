@@ -8,18 +8,18 @@
     <tr>
         <th>Id</th>
         <th>Adı</th>
-
+        <th>Güncelle</th>
 
     </tr>
 
 
     @foreach (var label in Model)
     {
-        <tr>
-            <td>@label.Id</td>
-            <td>@label.LabelName</td>
-
-        </tr>
+<tr>
+    <td>@label.Id</td>
+    <td>@label.LabelName</td>
+    <td><a class="btn btn-warning" href="/AdminLabel/Update/@label.Id">Güncelle</a></td>
+</tr>
     }
 
 </table>

@@ -9,6 +9,7 @@ namespace Business.Abstracts
     public interface IBlogCategoryService
     {
         IDataResult<List<BlogCategory>> GetAll();
+        IResult Update(BlogCategory blogCategory);
         IResult Add(BlogCategory blogCategory);
     }
 }

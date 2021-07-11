@@ -1,0 +1,16 @@
+﻿@model Entity.Concrete.Label
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form asp-controller="AdminLabel" asp-action="Update" method="post">
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Etiket Id</label>
+        <input asp-for="Id" type="text" class="form-control" id="exampleFormControlInput1" disabled>
+        <label for="exampleFormControlInput1">Etiket İsmi</label>
+        <input asp-for="LabelName" type="text" class="form-control" id="exampleFormControlInput1">
+    </div>
+    <button class="btn btn-primary" type="submit">Etiket Güncelle</button>
+</form>
+

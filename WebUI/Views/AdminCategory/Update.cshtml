@@ -1,0 +1,16 @@
+﻿@model Entity.Concrete.Category
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form asp-controller="AdminCategory" asp-action="Update" method="post">
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Kategori Id</label>
+        <input asp-for="Id" type="text" class="form-control" id="exampleFormControlInput1" disabled>
+        <label for="exampleFormControlInput1">Kategori İsmi</label>
+        <input asp-for="CategoryName" type="text" class="form-control" id="exampleFormControlInput1">
+    </div>
+    <button class="btn btn-primary" type="submit">Kategori Güncelle</button>
+</form>
+

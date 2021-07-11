@@ -27,5 +27,16 @@ namespace Business.Concretes
         {
             return new SuccessDataResult<List<Category>>(_categoryDal.GetAll());
         }
+
+        public IDataResult<Category> GetById(int id)
+        {
+            return new SuccessDataResult<Category>(_categoryDal.Get(x=>x.Id==id));
+        }
+
+        public IResult Update(Category category)
+        {
+            _categoryDal.Update(category);
+            return new SuccessResult();
+        }
     }
 }

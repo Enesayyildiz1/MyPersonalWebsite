@@ -27,5 +27,16 @@ namespace Business.Concretes
         {
             return new SuccessDataResult<List<BlogLabel>>(_blogLabelDal.GetAll());
         }
+
+        public IDataResult<List<BlogLabel>> GetByBlogId(int id)
+        {
+            return new SuccessDataResult<List<BlogLabel>>(_blogLabelDal.GetAll(x => x.BlogId == id));
+        }
+
+        public IResult Update(BlogLabel blogLabel)
+        {
+            _blogLabelDal.Update(blogLabel);
+            return new SuccessResult();
+        }
     }
 }
