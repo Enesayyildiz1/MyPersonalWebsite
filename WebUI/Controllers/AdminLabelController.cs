@@ -43,6 +43,11 @@ namespace WebUI.Controllers
             return RedirectToAction("Index");
         }
         [HttpGet]
+        public IActionResult GetLabelsByBlogId(int id)
+        {
+           var liste= _blogLabelManager.GetByBlogId(id).Data;
+            return View(liste);
+        }
         public IActionResult AddToBlog(int id)
         {
             BlogLabel blogLabel = new BlogLabel();
