@@ -1,4 +1,5 @@
-﻿using Entity.Concrete;
+﻿using Core.Entities.Concrete;
+using Entity.Concrete;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,9 @@ namespace DataAccess.Concretes
         public DbSet<BlogLabel> BlogLabels { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Label> Labels { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<UserRole> UserRoles { get; set; }
 
     }
 }

@@ -11,7 +11,7 @@ namespace DataAccess.Concretes
 {
     public class BlogLabelDal:EfEntityRepositoryBase<BlogLabel,MyPersonalSiteContext>,IBlogLabelDal
     {
-        public List<BlogLabelDto> GetBlogLabelDetail(int id)
+        public IEnumerable<BlogLabelDto> GetBlogLabelDetail(int id)
         {
             using (MyPersonalSiteContext db = new MyPersonalSiteContext())
             {

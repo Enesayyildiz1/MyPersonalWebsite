@@ -1,14 +1,15 @@
-﻿@using Entity.Concrete
-@model List<BlogLabel>  
+﻿@using Entity.Dtos
+@model IEnumerable<BlogLabelDto>  
 @{
     ViewData["Title"] = "GetLabelsByBlogId";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <ul class="list-group">
+    <h5>Etiket İsimleri</h5>
     @foreach (var item in Model)
     {
-        <li class="list-group-item">item.</li>
+        <li class="list-group-item">@item.LabelName</li>
     }
 
 

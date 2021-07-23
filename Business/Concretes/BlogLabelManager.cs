@@ -2,6 +2,7 @@
 using Core.Utilities.Results;
 using DataAccess.Concretes;
 using Entity.Concrete;
+using Entity.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -28,9 +29,9 @@ namespace Business.Concretes
             return new SuccessDataResult<List<BlogLabel>>(_blogLabelDal.GetAll());
         }
 
-        public IDataResult<List<BlogLabel>> GetByBlogId(int id)
+        public IDataResult<IEnumerable<BlogLabelDto>> GetByBlogId(int id)
         {
-            return new SuccessDataResult<List<BlogLabel>>(_blogLabelDal.GetAll(x => x.BlogId == id));
+            return new SuccessDataResult<IEnumerable<BlogLabelDto>>(_blogLabelDal.GetBlogLabelDetail(id));
         }
 
         public IResult Update(BlogLabel blogLabel)

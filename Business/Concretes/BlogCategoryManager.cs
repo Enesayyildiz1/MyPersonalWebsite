@@ -2,6 +2,7 @@
 using Core.Utilities.Results;
 using DataAccess.Concretes;
 using Entity.Concrete;
+using Entity.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -26,6 +27,11 @@ namespace Business.Concretes
         public IDataResult<List<BlogCategory>> GetAll()
         {
             return new SuccessDataResult<List<BlogCategory>>(_blogCategoryDal.GetAll());
+        }
+
+        public IDataResult<IEnumerable<BlogCategoryDto>> GetByBlogId(int id)
+        {
+            return new SuccessDataResult<IEnumerable<BlogCategoryDto>>(_blogCategoryDal.GetBlogCategoryDetail(id));
         }
 
         public IResult Update(BlogCategory blogCategory)

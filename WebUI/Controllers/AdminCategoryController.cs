@@ -24,6 +24,12 @@ namespace WebUI.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public IActionResult GetCategoriesByBlogId(int id)
+        {
+            var liste = _blogCategoryManager.GetByBlogId(id).Data;
+            return View(liste);
+        }
         [HttpPost]
         public IActionResult Add(Category category)
         {

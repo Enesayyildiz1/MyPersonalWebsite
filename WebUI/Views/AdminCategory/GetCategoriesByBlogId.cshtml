@@ -1,0 +1,16 @@
+﻿@using Entity.Dtos
+@model IEnumerable<BlogCategoryDto>
+@{
+    ViewData["Title"] = "GetCategoriesByBlogId";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<ul class="list-group">
+    <h5>Kategori İsimleri</h5>
+    @foreach (var item in Model)
+    {
+        <li class="list-group-item">@item.CategoryName</li>
+    }
+
+
+</ul>
+

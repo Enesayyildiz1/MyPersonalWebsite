@@ -2,7 +2,7 @@
 using Business.Concretes;
 using DataAccess.Concretes;
 using Entity.Concrete;
-
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -14,6 +14,7 @@ using WebUI.Models;
 
 namespace WebUI.Controllers
 {
+    [Authorize]
     public class AdminAboutController : Controller
     {
         AboutManager _aboutManager = new AboutManager(new AboutDal());
