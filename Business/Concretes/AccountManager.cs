@@ -30,7 +30,7 @@ namespace Business.Concretes
         }
         public IDataResult<User> Login(UserForLoginDto userForLoginDto)
         {
-            var user = GetByUserNameAndPassword(userForLoginDto.UserName).Data;
+            User user = GetByUserNameAndPassword(userForLoginDto.UserName).Data;
             if (user == null)
             {
                 return new ErrorDataResult<User>("Kullanıcı yok");
@@ -55,6 +55,11 @@ namespace Business.Concretes
        
         public IDataResult<User> Register(UserForRegisterDto userForRegisterDto)
         {
+            userForRegisterDto.Password = "1234";
+            userForRegisterDto.Email="ayyildiz@gmail.com";
+            userForRegisterDto.FirstName = "Enes";
+            userForRegisterDto.LastName = "Ayyıldız";
+            userForRegisterDto.UserName = "yozgatli";
             var hmac = new System.Security.Cryptography.HMACSHA512();
             byte[] passwordHash, passwordSalt;
             passwordSalt = hmac.Key;

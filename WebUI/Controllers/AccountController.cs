@@ -16,12 +16,18 @@ namespace WebUI.Controllers
     public class AccountController : Controller
     {
         AccountManager _accountManager = new AccountManager(new AccountDal());
+        [HttpGet]
         public IActionResult Login()
         {
-            UserForLoginDto user = new UserForLoginDto();
-            user.UserName = "Enes";
-            user.Password = "12345";
-            if (true)
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Login(UserForLoginDto user)
+        {
+           
+            
+           
+            if (_accountManager.Login(user).Success)
             {
                 var claims = new List<Claim>
                {
@@ -31,9 +37,9 @@ namespace WebUI.Controllers
                 var principal = new ClaimsPrincipal(identity);
                 var props = new AuthenticationProperties();
                 HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,principal,props).Wait();
-                return RedirectToAction("AdminAbout", "Index");
+                return RedirectToAction("Index", "AdminAbout");
             }
-            
+            return View();
         }
     }
 }
