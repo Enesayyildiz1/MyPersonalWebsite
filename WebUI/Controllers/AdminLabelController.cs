@@ -1,6 +1,7 @@
 ﻿using Business.Concretes;
 using DataAccess.Concretes;
 using Entity.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace WebUI.Controllers
 {
+    [Authorize]
     public class AdminLabelController : Controller
     {
         LabelManager _labelManager = new LabelManager(new LabelDal());

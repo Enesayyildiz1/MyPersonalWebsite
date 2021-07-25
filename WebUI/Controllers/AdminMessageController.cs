@@ -1,5 +1,6 @@
 ﻿using Business.Concretes;
 using DataAccess.Concretes;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace WebUI.Controllers
 {
+    [Authorize]
     public class AdminMessageController : Controller
     {
         MessageManager _messageManager = new MessageManager(new MessageDal());
