@@ -14,12 +14,15 @@ namespace WebUI.Controllers
     public class HomeController : Controller
     {
 
-        BlogManager _blogManager = new BlogManager(new BlogDal());    
+        BlogManager _blogManager = new BlogManager(new BlogDal());
+        CategoryManager _categoryManager = new CategoryManager(new CategoryDal());
+        LabelManager _labelManager = new LabelManager(new LabelDal());
         public IActionResult Index()
         {
             var blogs = _blogManager.GetAll().Data;
             return View(blogs);
         }
+       
 
     
     }

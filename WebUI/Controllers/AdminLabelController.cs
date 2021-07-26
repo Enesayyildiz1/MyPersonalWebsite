@@ -70,7 +70,7 @@ namespace WebUI.Controllers
         {
             blogLabel.Id = 0;
             _blogLabelManager.Add(blogLabel);
-            return RedirectToAction("Index");
+            return RedirectToAction("BlogAddCategoryOrLabel", "AdminBlog");
         }
     }
 }
