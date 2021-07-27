@@ -12,6 +12,8 @@ namespace Business.Abstracts
         IDataResult<List<BlogCategory>> GetAll();
         IResult Update(BlogCategory blogCategory);
         IDataResult<IEnumerable<BlogCategoryDto>> GetByBlogId(int id);
+        IDataResult<IEnumerable<BlogCategoryDto>> GetByCategoryId(int id);
+       
         IResult Add(BlogCategory blogCategory);
     }
 }

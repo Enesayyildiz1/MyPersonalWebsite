@@ -34,6 +34,11 @@ namespace Business.Concretes
             return new SuccessDataResult<IEnumerable<BlogLabelDto>>(_blogLabelDal.GetBlogLabelDetail(id));
         }
 
+        public IDataResult<IEnumerable<BlogLabelDto>> GetByLabelId(int id)
+        {
+            return new SuccessDataResult<IEnumerable<BlogLabelDto>>(_blogLabelDal.GetBlogLabelDetailByLabelId(id));
+        }
+
         public IResult Update(BlogLabel blogLabel)
         {
             _blogLabelDal.Update(blogLabel);

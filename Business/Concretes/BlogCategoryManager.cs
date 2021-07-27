@@ -34,6 +34,12 @@ namespace Business.Concretes
             return new SuccessDataResult<IEnumerable<BlogCategoryDto>>(_blogCategoryDal.GetBlogCategoryDetail(id));
         }
 
+        public IDataResult<IEnumerable<BlogCategoryDto>> GetByCategoryId(int id)
+        {
+            return new SuccessDataResult<IEnumerable<BlogCategoryDto>>(_blogCategoryDal.GetBlogCategoryDetailByCategoryId(id));
+
+        }
+
         public IResult Update(BlogCategory blogCategory)
         {
             _blogCategoryDal.Update(blogCategory);

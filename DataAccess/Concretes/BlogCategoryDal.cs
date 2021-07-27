@@ -20,8 +20,35 @@ namespace DataAccess.Concretes
                              join b in db.Blogs
                              on bc.BlogId equals b.Id
                              select new BlogCategoryDto
-                             { BlogId = bc.BlogId, BlogHead = b.BlogHead, CategoryId = bc.CategoryId, CategoryName = c.CategoryName };
+                             { BlogId = bc.BlogId, BlogHead = b.BlogHead, CategoryId = bc.CategoryId, CategoryName = c.CategoryName 
+                             ,Author=b.Author,BlogBody=b.BlogBody,ImagePath=b.ImagePath,PublishedDate=b.PublishedDate,ReadTime=b.ReadTime};
                 return result.ToList().Where(x => x.BlogId == id);
+
+
+            }
+        }
+        public IEnumerable<BlogCategoryDto> GetBlogCategoryDetailByCategoryId(int id)
+        {
+            using (MyPersonalSiteContext db = new MyPersonalSiteContext())
+            {
+                var result = from bc in db.BlogCategories
+                             join c in db.Categories
+                             on bc.CategoryId equals c.Id
+                             join b in db.Blogs
+                             on bc.BlogId equals b.Id
+                             select new BlogCategoryDto
+                             {
+                                 BlogId = bc.BlogId,
+                                 BlogHead = b.BlogHead,
+                                 CategoryId = bc.CategoryId,
+                                 CategoryName = c.CategoryName,                  
+                                 Author = b.Author,
+                                 BlogBody = b.BlogBody,
+                                 ImagePath = b.ImagePath,
+                                 PublishedDate = b.PublishedDate,
+                                 ReadTime = b.ReadTime
+                             };
+                return result.ToList().Where(x => x.CategoryId == id);
 
 
             }

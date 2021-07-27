@@ -28,5 +28,30 @@ namespace DataAccess.Concretes
             }
 
         }
+        public IEnumerable<BlogLabelDto> GetBlogLabelDetailByLabelId(int id)
+        {
+            using (MyPersonalSiteContext db = new MyPersonalSiteContext())
+            {
+                var result = from bl in db.BlogLabels
+                             join l in db.Labels
+                             on bl.LabelId equals l.Id
+                             join b in db.Blogs
+                             on bl.BlogId equals b.Id
+                             select new BlogLabelDto
+                             { BlogId = bl.BlogId,
+                                 BlogHead = b.BlogHead,
+                                 LabelId = bl.LabelId, 
+                                 LabelName = l.LabelName,
+                             Author=b.Author,
+                             BlogBody=b.BlogBody,
+                             ImagePath=b.ImagePath,
+                             PublishedDate=b.PublishedDate,
+                             ReadTime=b.ReadTime};
+                return result.ToList().Where(x => x.LabelId == id);
+
+
+            }
+
+        }
     }
 }

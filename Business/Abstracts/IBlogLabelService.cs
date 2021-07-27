@@ -12,6 +12,7 @@ namespace Business.Abstracts
         IResult Add(BlogLabel blogLabel);
         IDataResult<List<BlogLabel>> GetAll();
         IDataResult<IEnumerable<BlogLabelDto>> GetByBlogId(int id);
+        IDataResult<IEnumerable<BlogLabelDto>> GetByLabelId(int id);
         IResult Update(BlogLabel blogLabel);
     }
 }

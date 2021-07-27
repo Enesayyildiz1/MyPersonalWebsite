@@ -9,13 +9,13 @@
     <h4>Kategoriler</h4>
     @foreach (var item in Model.Categories)
     {
-        <a style="border-radius:10px;margin:5px;" class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">@item.CategoryName</a>
+        <a asp-controller="Blog" asp-action="GetBlogsByCategoryId" asp-route-id="@item.Id"  style="border-radius:10px;margin:5px;" class="list-group-item list-group-item-action active" id="list-home-list" type="button" >@item.CategoryName</a>
       
     }
     <h4>Etiketler</h4>
     @foreach (var item in Model.Labels)
     {
-        <a style="border-radius:10px;margin:5px;"class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">@item.LabelName</a>
+        <a  asp-controller="Blog" asp-action="GetBlogsByLabelId" asp-route-id="@item.Id"  style="border-radius:10px;margin:5px;"class="list-group-item list-group-item-action active" id="list-home-list" >@item.LabelName</a>
        
     }
 
