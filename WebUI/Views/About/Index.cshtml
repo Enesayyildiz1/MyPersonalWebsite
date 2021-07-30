@@ -9,16 +9,16 @@
     <div class="container">
         <h2 class="title mb-3" style="font-family: 'Century Gothic'">Hakkımda</h2>
 
-        <p id="content" style="font-family: 'Lucida Bright ';position:center">@Html.Raw(@Model.AboutMe)</p>
+        <p id="content"  style="font-family: 'Lucida Bright '">@Html.Raw(@Model.AboutMe)</p>
 
-        <figure><img class="img-fluid" width="300" height="250"src="@Model.FirstImagePath" alt="image"></figure>
+        <figure style="text-align:center"><img style="border-radius: 5%"  class="img-fluid" width="300" height="250"src="@Model.FirstImagePath" alt="image"></figure>
 
 
-        <h5 class="mt-5">Blog Hakkında</h5>
+        <h5 class="mt-5" style="font-family: 'Century Gothic'">Blog Hakkında</h5>
         <p style="font-family: 'Lucida Bright '">@Model.AboutTheBlog</p>
-        <h5 class="mt-5">Yeteneklerim</h5>
+        <h5 class="mt-5" style="font-family: 'Century Gothic'">Yeteneklerim</h5>
         <p style="font-family: 'Lucida Bright '">@Model.MySkillsAndExperience</p>
-        <h5 class="mt-5">Başka Neler Yapıyorum?</h5>
+        <h5 class="mt-5" style="font-family: 'Century Gothic'">Başka Neler Yapıyorum?</h5>
         <p style="font-family: 'Lucida Bright '">@Model.SideTodos</p>
 
         <figure><a href="https://made4dev.com"><img class="img-fluid" src="@Model.SecondImagePath" alt="image"></a></figure>

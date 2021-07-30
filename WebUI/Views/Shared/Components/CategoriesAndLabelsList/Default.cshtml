@@ -5,17 +5,17 @@
 
 
 
-<div class="list-group" id="list-tab" role="tablist">
-    <h4>Kategoriler</h4>
+<div style="margin:10px"class="list-group" id="list-tab" role="tablist">
+    <h4 style="font-family: 'Century Gothic';text-align:center">Kategoriler</h4>
     @foreach (var item in Model.Categories)
     {
-        <a asp-controller="Blog" asp-action="GetBlogsByCategoryId" asp-route-id="@item.Id"  style="border-radius:10px;margin:5px;" class="list-group-item list-group-item-action active" id="list-home-list" type="button" >@item.CategoryName</a>
+        <a  asp-controller="Blog" asp-action="GetBlogsByCategoryId" asp-route-id="@item.Id"  style="font-family: 'Lucida Bright ';border-radius:10px; margin: 5px;" class="list-group-item list-group-item-action active" id="list-home-list" type="button" >@item.CategoryName</a>
       
     }
-    <h4>Etiketler</h4>
+    <h4  style="font-family: 'Century Gothic';text-align:center">Etiketler</h4>
     @foreach (var item in Model.Labels)
     {
-        <a  asp-controller="Blog" asp-action="GetBlogsByLabelId" asp-route-id="@item.Id"  style="border-radius:10px;margin:5px;"class="list-group-item list-group-item-action active" id="list-home-list" >@item.LabelName</a>
+        <a  asp-controller="Blog" asp-action="GetBlogsByLabelId" asp-route-id="@item.Id"  style="font-family: 'Lucida Bright ';border-radius:10px; margin: 5px;"class="list-group-item list-group-item-action active" id="list-home-list" >@item.LabelName</a>
        
     }
 
