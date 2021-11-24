@@ -11,7 +11,7 @@ namespace DataAccess.Concretes
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=LAPTOP-7HDI1FAU;Database=Db_PersonalWebSite;" +
+            optionsBuilder.UseSqlServer(@"Server=LAPTOP-9VS99FKB\SQLEXPRESS;Database=Db_PersonalWebSite;" +
                 "Trusted_Connection=true");
             base.OnConfiguring(optionsBuilder);
         }
